@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE STORE | Tu estilo, tus reglas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="anuncio">
+        ✨ NUEVA TEMPORADA | ENVÍO GRATIS EN COMPRAS MAYORES A S/ 199 ✨
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo">LUXE<span>.</span></div>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <nav id="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+        </nav>
+
+        <button class="carrito" id="carrito">
+            🛍 Bolsa <span id="contador">0</span>
+        </button>
+    </header>
+
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-texto">
+            <p class="subtitulo">ESTILO SIN LÍMITES</p>
+
+            <h1>Tu estilo.<br>
+                <span>Tus reglas.</span>
+            </h1>
+
+            <p>
+                Descubre prendas y accesorios que hablan de ti.
+                Encuentra tu estilo ideal con nuestra colección
+                femenina y masculina.
+            </p>
+
+            <a href="#productos" class="boton">
+                EXPLORAR TIENDA ↗
+            </a>
+        </div>
+
+        <div class="hero-imagen">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85"
+                alt="Moda y estilo">
+            <div class="etiqueta">NEW<br>COLLECTION</div>
+        </div>
+
+    </section>
+
+    <!-- COLECCIONES -->
+    <section class="seccion" id="colecciones">
+
+        <div class="titulo">
+            <p class="subtitulo">ENCUENTRA TU ESENCIA</p>
+            <h2>Dos estilos. <span>Mil formas de ser.</span></h2>
+        </div>
+
+        <div class="colecciones">
+
+            <div class="coleccion">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85"
+                    alt="Moda femenina">
+
+                <div class="coleccion-texto">
+                    <p>COLECCIÓN 01</p>
+                    <h3>Femenino</h3>
+                    <button onclick="filtrar('femenino')">
+                        DESCUBRIR ↗
+                    </button>
+                </div>
+            </div>
+
+            <div class="coleccion">
+                <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=900&q=85"
+                    alt="Moda masculina">
+
+                <div class="coleccion-texto">
+                    <p>COLECCIÓN 02</p>
+                    <h3>Masculino</h3>
+                    <button onclick="filtrar('masculino')">
+                        DESCUBRIR ↗
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos seccion" id="productos">
+
+        <div class="titulo">
+            <p class="subtitulo">SELECCIÓN LUXE</p>
+            <h2>Nuestros <span>productos.</span></h2>
+        </div>
+
+        <div class="filtros">
+            <button class="filtro activo" onclick="filtrar('todos', this)">Todos</button>
+            <button class="filtro" onclick="filtrar('femenino', this)">Femenino</button>
+            <button class="filtro" onclick="filtrar('masculino', this)">Masculino</button>
+        </div>
+
+        <div class="productos-grid">
+
+            <div class="producto" data-categoria="femenino">
+                <div class="producto-img">
+                    <span class="nuevo">NUEVO</span>
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=85"
+                        alt="Bolso femenino">
+                </div>
+                <h3>Bolso Élise</h3>
+                <p>Femenino | Accesorios</p>
+                <strong>S/ 129.00</strong>
+                <button onclick="agregar('Bolso Élise',129)">Agregar a la bolsa +</button>
+            </div>
+
+            <div class="producto" data-categoria="masculino">
+                <div class="producto-img">
+                    <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&q=85"
+                        alt="Ropa masculina">
+                </div>
+                <h3>Polo Essential</h3>
+                <p>Masculino | Ropa</p>
+                <strong>S/ 79.00</strong>
+                <button onclick="agregar('Polo Essential',79)">Agregar a la bolsa +</button>
+            </div>
+
+            <div class="producto" data-categoria="femenino">
+                <div class="producto-img">
+                    <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=85"
+                        alt="Calzado femenino">
+                </div>
+                <h3>Sandalias Aura</h3>
+                <p>Femenino | Calzado</p>
+                <strong>S/ 115.00</strong>
+                <button onclick="agregar('Sandalias Aura',115)">Agregar a la bolsa +</button>
+            </div>
+
+            <div class="producto" data-categoria="masculino">
+                <div class="producto-img">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"
+                        alt="Reloj masculino">
+                </div>
+                <h3>Reloj Urban</h3>
+                <p>Masculino | Accesorios</p>
+                <strong>S/ 189.00</strong>
+                <button onclick="agregar('Reloj Urban',189)">Agregar a la bolsa +</button>
+            </div>
+
+            <div class="producto" data-categoria="femenino">
+                <div class="producto-img">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=85"
+                        alt="Chaqueta">
+                </div>
+                <h3>Chaqueta Studio</h3>
+                <p>Femenino | Ropa</p>
+                <strong>S/ 159.00</strong>
+                <button onclick="agregar('Chaqueta Studio',159)">Agregar a la bolsa +</button>
+            </div>
+
+            <div class="producto" data-categoria="masculino">
+                <div class="producto-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85"
+                        alt="Zapatillas">
+                </div>
+                <h3>Zapatillas Move</h3>
+                <p>Masculino | Calzado</p>
+                <strong>S/ 219.00</strong>
+                <button onclick="agregar('Zapatillas Move',219)">Agregar a la bolsa +</button>
+            </div>
+
+        </div>
+
+        <p class="nota">* Productos y precios demostrativos para el proyecto académico.</p>
+
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="nosotros" id="nosotros">
+
+        <p class="subtitulo">MÁS QUE MODA</p>
+
+        <h2>La mejor versión de tu estilo empieza aquí.</h2>
+
+        <p>
+            En LUXE creemos que vestir bien es sentirte bien.
+            Creamos un espacio donde cada persona puede
+            expresar su personalidad y encontrar su propia identidad.
+        </p>
+
+        <a href="#productos" class="boton boton-claro">
+            DESCUBRIR PRODUCTOS ↗
+        </a>
+
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios seccion">
+
+        <div>
+            <span>01</span>
+            <h3>Calidad y estilo</h3>
+            <p>Productos seleccionados para cada ocasión.</p>
+        </div>
+
+        <div>
+            <span>02</span>
+            <h3>Compra sencilla</h3>
+            <p>Una experiencia fácil y cómoda para explorar.</p>
+        </div>
+
+        <div>
+            <span>03</span>
+            <h3>Moda para todos</h3>
+            <p>Encuentra prendas para expresar tu personalidad.</p>
+        </div>
+
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="logo">LUXE<span>.</span></div>
+        <p>Tu estilo, tus reglas. © 2026 LUXE STORE</p>
+        <a href="#inicio">Volver arriba ↑</a>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE -->
+    <button class="boton-info" id="abrirInfo">i</button>
+
+    <!-- VENTANA DE INFORMACIÓN -->
+    <div class="modal" id="modal">
+
+        <div class="modal-contenido">
+
+            <button class="cerrar" id="cerrarInfo">×</button>
+
+            <p class="subtitulo">ESTAMOS PARA AYUDARTE</p>
+
+            <h2>¿Necesitas información?</h2>
+
+            <p>
+                Gracias por visitar LUXE STORE.
+                Para consultas sobre nuestra tienda demostrativa,
+                puedes escribirnos.
+            </p>
+
+            <a href="mailto:contacto@luxestore.demo" class="boton">
+                CONTACTAR ↗
+            </a>
+
+        </div>
+
+    </div>
+
+    <div id="mensaje" class="mensaje"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
